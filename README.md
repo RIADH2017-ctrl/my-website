@@ -5,68 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع الأستاذ رياض سليمي - التاريخ والجغرافيا</title>
     <style>
-        body {
-            font-family: Tahoma, Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #1a73e8;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        h2 {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #1a73e8;
-            color: #white;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #1557b0;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #777;
-        }
+        body { font-family: Tahoma, Arial, sans-serif; background-color: #f4f6f9; color: #333; text-align: center; padding: 40px 20px; margin: 0; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #1e3a8a; margin-bottom: 10px; font-size: 24px; }
+        p { color: #555; font-size: 16px; line-height: 1.6; }
+        .btn { display: inline-block; margin-top: 20px; background-color: #2563eb; color: white; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+        .btn:hover { background-color: #1d4ed8; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>موقع التاريخ والجغرافيا</h1>
-        <h2>الأستاذ: رياض سليمي | إعدادية الخشم، سيدي بوزيد</h2>
-        <p>مرحباً بكم في فضاء الدروس والنشاطات التربوية للمستوى السابعة أساسي.</p>
-        
-        <a href="lesson1.pdf" class="btn" target="_blank">تصفح درس: الأرض كوكب أزرق</a>
-
-        <div class="footer">
-            وزارة التربية - الجمهورية التونسية | السنة الدراسية 2026/2027
-        </div>
+        <h1>موقع الأستاذ رياض سليمي</h1>
+        <p>مرحباً بكم في الفضاء التربوي لمادة التاريخ والجغرافيا.</p>
+        <p>اعدادية الخشم - سيدي بوزيد</p>
+        <a href="lesson1.pdf" class="btn" target="_blank">تحميل الدرس الأول (PDF)</a>
     </div>
-
 </body>
 </html>
+
 
 
