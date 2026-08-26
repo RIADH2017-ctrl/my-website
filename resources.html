@@ -3,92 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الموارد التعليمية</title>
+    <title>مكتبة الموارد التعليمية - محمية</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f9;
             text-align: center;
             padding: 20px;
+            /* منع تحديد النصوص بالماوس أو اللمس */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         h2, h3 {
             color: #333;
         }
-        .btn {
-            display: block;
+        .viewer-container {
             width: 85%;
-            max-width: 400px;
-            margin: 10px auto;
-            padding: 12px 20px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
+            max-width: 600px;
+            margin: 15px auto;
+            background: white;
+            padding: 10px;
             border-radius: 8px;
-            transition: background 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .btn:hover {
-            background-color: #0056b3;
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 4px;
+        }
+        .file-title {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 8px;
+            font-size: 16px;
         }
         hr {
             border: 0;
             height: 1px;
             background: #ccc;
-            margin: 20px 0;
+            margin: 30px 0;
         }
     </style>
+    
+    <!-- أكواد الحماية لمنع النسخ والنقر الأيمن -->
+    <script>
+        // منع النقر بزر الماوس الأيمن
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // منع اختصارات لوحة المفاتيح (F12, النسخ, فحص الكود)
+        document.onkeydown = function(e) {
+            if(event.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85) || (e.ctrlKey && e.keyCode == 67)) {
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
 
-    <h2>مكتبة الخرائط والوثائق التعليمية</h2>
+    <h2>مكتبة الخرائط والوثائق التعليمية المحمية</h2>
 
     <!-- قسم الخرائط -->
     <h3>الخرائط الجغرافية</h3>
-    <a href="map1.pdf" class="btn" target="_blank">الخريطة 1: عنوان الخريطة هنا</a>
-    <a href="map2.pdf" class="btn" target="_blank">الخريطة 2: عنوان الخريطة هنا</a>
-    <a href="map3.pdf" class="btn" target="_blank">الخريطة 3: عنوان الخريطة هنا</a>
-    <a href="map4.pdf" class="btn" target="_blank">الخريطة 4: عنوان الخريطة هنا</a>
-    <a href="map5.pdf" class="btn" target="_blank">الخريطة 5: عنوان الخريطة هنا</a>
-    <a href="map6.pdf" class="btn" target="_blank">الخريطة 6: عنوان الخريطة هنا</a>
-    <a href="map7.pdf" class="btn" target="_blank">الخريطة 7: عنوان الخريطة هنا</a>
-    <a href="map8.pdf" class="btn" target="_blank">الخريطة 8: عنوان الخريطة هنا</a>
-    <a href="map9.pdf" class="btn" target="_blank">الخريطة 9: عنوان الخريطة هنا</a>
-    <a href="map10.pdf" class="btn" target="_blank">الخريطة 10: عنوان الخريطة هنا</a>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 1</div>
+        <iframe src="map1.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 2</div>
+        <iframe src="map2.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 3</div>
+        <iframe src="map3.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 4</div>
+        <iframe src="map4.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 5</div>
+        <iframe src="map5.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 6</div>
+        <iframe src="map6.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 7</div>
+        <iframe src="map7.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 8</div>
+        <iframe src="map8.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 9</div>
+        <iframe src="map9.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الخريطة 10</div>
+        <iframe src="map10.pdf"></iframe>
+    </div>
 
     <hr>
 
     <!-- قسم الوثائق والدروس -->
     <h3>الوثائق والدروس</h3>
-    <a href="pdf.1" class="btn" target="_blank">وثيقة: عنوان الدرس الأول</a>
-    <a href="doc2.pdf" class="btn" target="_blank">الوثيقة 2: عنوان الوثيقة الثانية هنا</a>
-    <a href="doc3.pdf" class="btn" target="_blank">الوثيقة 3: عنوان الوثيقة الثالثة هنا</a>
-    <a href="doc4.pdf" class="btn" target="_blank">الوثيقة 4: عنوان الوثيقة الرابعة هنا</a>
-    <a href="doc5.pdf" class="btn" target="_blank">الوثيقة 5: عنوان الوثيقة الخامسة هنا</a>
-    <a href="doc6.pdf" class="btn" target="_blank">الوثيقة 6: عنوان الوثيقة السادسة هنا</a>
-    <a href="doc7.pdf" class="btn" target="_blank">الوثيقة 7: عنوان الوثيقة السابعة هنا</a>
-    <a href="doc8.pdf" class="btn" target="_blank">الوثيقة 8: عنوان الوثيقة الثامنة هنا</a>
-    <a href="doc9.pdf" class="btn" target="_blank">الوثيقة 9: عنوان الوثيقة التاسعة هنا</a>
-    <a href="doc10.pdf" class="btn" target="_blank">الوثيقة 10: عنوان الوثيقة العاشرة هنا</a>
-    <a href="doc11.pdf" class="btn" target="_blank">الوثيقة 11: عنوان الوثيقة الحادية عشرة هنا</a>
-    <a href="doc12.pdf" class="btn" target="_blank">الوثيقة 12: عنوان الوثيقة الثانية عشرة هنا</a>
-    <a href="doc13.pdf" class="btn" target="_blank">الوثيقة 13: عنوان الوثيقة الثالثة عشرة هنا</a>
-    <a href="doc14.pdf" class="btn" target="_blank">الوثيقة 14: عنوان الوثيقة الرابعة عشرة هنا</a>
-    <a href="doc15.pdf" class="btn" target="_blank">الوثيقة 15: عنوان الوثيقة الخامسة عشرة هنا</a>
-    <a href="doc16.pdf" class="btn" target="_blank">الوثيقة 16: عنوان الوثيقة السادسة عشرة هنا</a>
-    <a href="doc17.pdf" class="btn" target="_blank">الوثيقة 17: عنوان الوثيقة السابعة عشرة هنا</a>
-    <a href="doc18.pdf" class="btn" target="_blank">الوثيقة 18: عنوان الوثيقة الثامنة عشرة هنا</a>
-    <a href="doc19.pdf" class="btn" target="_blank">الوثيقة 19: عنوان الوثيقة التاسعة عشرة هنا</a>
-    <a href="doc20.pdf" class="btn" target="_blank">الوثيقة 20: عنوان الوثيقة العشرون هنا</a>
-    <a href="doc21.pdf" class="btn" target="_blank">الوثيقة 21: عنوان الوثيقة الحادية والعشرون هنا</a>
-    <a href="doc22.pdf" class="btn" target="_blank">الوثيقة 22: عنوان الوثيقة الثانية والعشرون هنا</a>
-    <a href="doc23.pdf" class="btn" target="_blank">الوثيقة 23: عنوان الوثيقة الثالثة والعشرون هنا</a>
-    <a href="doc24.pdf" class="btn" target="_blank">الوثيقة 24: عنوان الوثيقة الرابعة والعشرون هنا</a>
-    <a href="doc25.pdf" class="btn" target="_blank">الوثيقة 25: عنوان الوثيقة الخامسة والعشرون هنا</a>
-    <a href="doc26.pdf" class="btn" target="_blank">الوثيقة 26: عنوان الوثيقة السادسة والعشرون هنا</a>
-    <a href="doc27.pdf" class="btn" target="_blank">الوثيقة 27: عنوان الوثيقة السابعة والعشرون هنا</a>
-    <a href="doc28.pdf" class="btn" target="_blank">الوثيقة 28: عنوان الوثيقة الثامنة والعشرون هنا</a>
-    <a href="doc29.pdf" class="btn" target="_blank">الوثيقة 29: عنوان الوثيقة التاسعة والعشرون هنا</a>
-    <a href="doc30.pdf" class="btn" target="_blank">الوثيقة 30: عنوان الوثيقة الثلاثون هنا</a>
+
+    <div class="viewer-container">
+        <div class="file-title">وثيقة الدرس الأول</div>
+        <iframe src="pdf.1"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الوثيقة 2</div>
+        <iframe src="doc2.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الوثيقة 3</div>
+        <iframe src="doc3.pdf"></iframe>
+    </div>
+
+    <div class="viewer-container">
+        <div class="file-title">الوثيقة 4</div>
+        <iframe src="doc4.pdf"></iframe>
+    </div>
+
+    <!-- باقي النماذج الجاهزة للوثائق حتى 30 لتبقى محفوظة لديك -->
+    <div class="viewer-container"><div class="file-title">الوثيقة 5</div><iframe src="doc5.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 6</div><iframe src="doc6.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 7</div><iframe src="doc7.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 8</div><iframe src="doc8.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 9</div><iframe src="doc9.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 10</div><iframe src="doc10.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 11</div><iframe src="doc11.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 12</div><iframe src="doc12.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 13</div><iframe src="doc13.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 14</div><iframe src="doc14.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 15</div><iframe src="doc15.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 16</div><iframe src="doc16.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 17</div><iframe src="doc17.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 18</div><iframe src="doc18.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 19</div><iframe src="doc19.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 20</div><iframe src="doc20.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 21</div><iframe src="doc21.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 22</div><iframe src="doc22.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 23</div><iframe src="doc23.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 24</div><iframe src="doc24.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 25</div><iframe src="doc25.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 26</div><iframe src="doc26.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 27</div><iframe src="doc27.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 28</div><iframe src="doc28.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 29</div><iframe src="doc29.pdf"></iframe></div>
+    <div class="viewer-container"><div class="file-title">الوثيقة 30</div><iframe src="doc30.pdf"></iframe></div>
 
 </body>
 </html>
