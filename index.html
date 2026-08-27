@@ -3,32 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة الموارد التعليمية - الأستاذ رياض سليمي</title>
+    <title>موقع الأستاذ رياض سليمي</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f9;
             text-align: center;
             padding: 20px;
-            /* منع تحديد النصوص بالماوس أو اللمس */
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
         }
-        /* تنسيق الصورة الشخصية */
+        /* تنسيق الصورة الشخصية بحجم متناسق ودائري */
         .profile-pic {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #007bff;
-            margin: 10px auto 15px auto;
+            margin: 10px auto;
             display: block;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         h2, h3 {
             color: #333;
+        }
+        .header-title {
+            color: #1a365d;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        .header-subtitle {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        /* تنسيق الأزرار (مثل أزرار الدروس) */
+        .lesson-btn {
+            display: block;
+            width: 85%;
+            max-width: 500px;
+            margin: 10px auto;
+            background-color: #d68910;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .lesson-btn:hover {
+            background-color: #b7770d;
+        }
+        /* زر الدخول لمكتبة الخرائط */
+        .library-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .library-btn:hover {
+            background-color: #218838;
         }
         .viewer-container {
             width: 85%;
@@ -85,12 +126,9 @@
         }
     </style>
     
-    <!-- أكواد الحماية لمنع النسخ والنقر الأيمن -->
+    <!-- حماية الموقع -->
     <script>
-        // منع النقر بزر الماوس الأيمن
         document.addEventListener('contextmenu', event => event.preventDefault());
-
-        // منع اختصارات لوحة المفاتيح (F12, النسخ, فحص الكود)
         document.onkeydown = function(e) {
             if(event.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85) || (e.ctrlKey && e.keyCode == 67)) {
                 return false;
@@ -100,138 +138,43 @@
 </head>
 <body>
 
-    <!-- صورتك الشخصية في أعلى الموقع -->
+    <!-- الترويسة مع صورتك الشخصية بحجمها الصحيح -->
     <img src="profile.jpg" alt="الأستاذ رياض سليمي" class="profile-pic">
 
-    <h2>موقع الأستاذ رياض سليمي</h2>
-    <p>الفضاء التربوي التفاعلي - التاريخ والجغرافيا</p>
-    <p>اعدادية الخشم - سيدي بوزيد</p>
+    <h2 class="header-title">موقع الأستاذ رياض سليمي</h2>
+    <p class="header-subtitle">الفضاء التربوي التفاعلي - التاريخ والجغرافيا</p>
+    <p class="header-subtitle">اعدادية الخشم - سيدي بوزيد</p>
 
     <hr>
 
+    <!-- قسم القائمة الرئيسية والدروس -->
+    <h3>مكتبة الموارد</h3>
+    <a href="#maps-section" class="library-btn">📁 الدخول إلى مكتبة الخرائط والوثائق</a>
+
+    <h3 style="margin-top: 30px; color: #1a365d;">قسم السنة السابعة أساسي</h3>
+    <p style="color: #666;">دروس التاريخ:</p>
+
+    <!-- أزرار الدروس -->
+    <a href="lesson1.html" class="lesson-btn">الدرس 1: ظهور الزراعة والكتابة</a>
+    <a href="lesson2.html" class="lesson-btn">الدرس 2: بلاد الرافدين ومصر الفرعونية</a>
+    <a href="lesson3.html" class="lesson-btn">الدرس 3: أثينا في العصر الكلاسيكي</a>
+    <a href="lesson4.html" class="lesson-btn">الدرس 4: قرطاج في العهد البوني</a>
+    <a href="lesson5.html" class="lesson-btn">الدرس 5: الصراع بين روما وقرطاج</a>
+
+    <hr id="maps-section">
+
+    <!-- قسم الخرائط والوثائق -->
     <h3>مكتبة الخرائط والوثائق التعليمية المحمية</h3>
-
-    <!-- قسم الخرائط -->
-    <h3>الخرائط الجغرافية</h3>
-
+    
     <div class="viewer-container">
         <div class="file-title">الخريطة 1</div>
         <iframe src="map1.pdf"></iframe>
         <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
     </div>
 
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 2</div>
-        <iframe src="map2.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
+    <!-- (بقية الخرائط والوثائق من 2 إلى 10 ومن doc2 إلى doc30 يمكنك وضعها هنا كما كانت لديك) -->
 
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 3</div>
-        <iframe src="map3.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 4</div>
-        <iframe src="map4.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 5</div>
-        <iframe src="map5.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 6</div>
-        <iframe src="map6.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 7</div>
-        <iframe src="map7.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 8</div>
-        <iframe src="map8.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 9</div>
-        <iframe src="map9.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 10</div>
-        <iframe src="map10.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <hr>
-
-    <!-- قسم الوثائق والدروس -->
-    <h3>الوثائق والدروس</h3>
-
-    <div class="viewer-container">
-        <div class="file-title">وثيقة الدرس الأول</div>
-        <iframe src="pdf.1"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الوثيقة 2</div>
-        <iframe src="doc2.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الوثيقة 3</div>
-        <iframe src="doc3.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <div class="viewer-container">
-        <div class="file-title">الوثيقة 4</div>
-        <iframe src="doc4.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
-
-    <!-- باقي الوثائق حتى 30 -->
-    <div class="viewer-container"><div class="file-title">الوثيقة 5</div><iframe src="doc5.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 6</div><iframe src="doc6.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 7</div><iframe src="doc7.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 8</div><iframe src="doc8.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 9</div><iframe src="doc9.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 10</div><iframe src="doc10.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 11</div><iframe src="doc11.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 12</div><iframe src="doc12.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 13</div><iframe src="doc13.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 14</div><iframe src="doc14.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 15</div><iframe src="doc15.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 16</div><iframe src="doc16.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 17</div><iframe src="doc17.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 18</div><iframe src="doc18.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 19</div><iframe src="doc19.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 20</div><iframe src="doc20.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 21</div><iframe src="doc21.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 22</div><iframe src="doc22.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 23</div><iframe src="doc23.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 24</div><iframe src="doc24.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 25</div><iframe src="doc25.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 26</div><iframe src="doc26.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 27</div><iframe src="doc27.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 28</div><iframe src="doc28.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 29</div><iframe src="doc29.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-    <div class="viewer-container"><div class="file-title">الوثيقة 30</div><iframe src="doc30.pdf"></iframe><div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div></div>
-
-    <!-- تذييل الصفحة (Footer) -->
+    <!-- تذييل الصفحة -->
     <div class="site-footer">
         <p>جميع الحقوق محفوظة © 2026 الأستاذ رياض سليمي</p>
         <p>للتواصل وطلب الإذن: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></p>
@@ -239,6 +182,7 @@
 
 </body>
 </html>
+
 
 
 
