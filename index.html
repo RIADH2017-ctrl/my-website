@@ -1,187 +1,104 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع الأستاذ رياض سليمي</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            text-align: center;
-            padding: 20px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        /* تنسيق الصورة الشخصية بحجم متناسق ودائري */
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #007bff;
-            margin: 10px auto;
-            display: block;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h2, h3 {
-            color: #333;
-        }
-        .header-title {
-            color: #1a365d;
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-        .header-subtitle {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 3px;
-        }
-        /* تنسيق الأزرار (مثل أزرار الدروس) */
-        .lesson-btn {
-            display: block;
-            width: 85%;
-            max-width: 500px;
-            margin: 10px auto;
-            background-color: #d68910;
-            color: white;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .lesson-btn:hover {
-            background-color: #b7770d;
-        }
-        /* زر الدخول لمكتبة الخرائط */
-        .library-btn {
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-        .library-btn:hover {
-            background-color: #218838;
-        }
-        .viewer-container {
-            width: 85%;
-            max-width: 600px;
-            margin: 20px auto;
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            border-radius: 4px;
-        }
-        .file-title {
-            font-weight: bold;
-            color: #007bff;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        .permission-notice {
-            font-size: 13px;
-            color: #a94442;
-            background-color: #f9f2f2;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-            border: 1px dashed #ebccd1;
-        }
-        .permission-notice a {
-            color: #d9534f;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .site-footer {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
-            font-size: 14px;
-        }
-        .site-footer a {
-            color: #ffc107;
-            text-decoration: none;
-        }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ccc;
-            margin: 30px 0;
-        }
-    </style>
-    
-    <!-- حماية الموقع -->
-    <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-        document.onkeydown = function(e) {
-            if(event.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.keyCode == 85) || (e.ctrlKey && e.keyCode == 67)) {
-                return false;
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع الأستاذ رياض سليمي - الفضاء التفاعلي</title>
+<style>
+body { font-family: Tahoma, Arial, sans-serif; background-color: #f4f6f9; color: #333; text-align: center; padding: 30px 15px; margin: 0; }
+.container { max-width: 700px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+/* تنسيق الصورة الشخصية الدائرية */
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2563eb;
+    margin: 0 auto 15px auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+h1 { color: #1e3a8a; margin-bottom: 5px; font-size: 24px; }
+h2 { color: #2563eb; font-size: 18px; margin-top: 30px; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; text-align: right; }
+h3 { color: #4b5563; font-size: 15px; margin-top: 20px; text-align: right; }
+.btn { display: block; width: 100%; box-sizing: border-box; margin: 8px 0; background-color: #d97706; color: white; padding: 12px 15px; text-decoration: none; border-radius: 6px; font-weight: bold; text-align: center; transition: 0.3s; }
+.btn:hover { background-color: #b45309; }
+.btn-library { background-color: #059669; } /* لون مميز لمكتبة الخرائط */
+.btn-library:hover { background-color: #047857; }
+.copyright-box { background-color: #fef2f2; border: 1px solid #fecaca; color: #991b1b; padding: 12px; border-radius: 6px; margin-top: 25px; font-size: 13px; text-align: right; line-height: 1.6; }
+.footer { margin-top: 20px; font-size: 13px; color: #777; }
+</style>
 </head>
 <body>
+<div class="container">
 
-    <!-- الترويسة مع صورتك الشخصية بحجمها الصحيح -->
-    <img src="profile.jpg" alt="الأستاذ رياض سليمي" class="profile-pic">
+<!-- صورة الأستاذ الشخصية (تأكد أن اسم الصورة في نفس المجلد هو profile.jpg) -->
+<img src="profile.jpg" alt="الأستاذ رياض سليمي" class="profile-pic">
 
-    <h2 class="header-title">موقع الأستاذ رياض سليمي</h2>
-    <p class="header-subtitle">الفضاء التربوي التفاعلي - التاريخ والجغرافيا</p>
-    <p class="header-subtitle">اعدادية الخشم - سيدي بوزيد</p>
+<h1>موقع الأستاذ رياض سليمي</h1>
+<p>الفضاء التربوي التفاعلي - التاريخ والجغرافيا</p>
+<p><b>اعدادية الخشم - سيدي بوزيد</b></p>
 
-    <hr>
+<!-- زر الانتقال إلى مكتبة الخرائط والموارد -->
+<h2>مكتبة الموارد</h2>
+<a href="resources.html" class="btn btn-library" target="_blank">🗂️ الدخول إلى مكتبة الخرائط والوثائق</a>
 
-    <!-- قسم القائمة الرئيسية والدروس -->
-    <h3>مكتبة الموارد</h3>
-    <a href="#maps-section" class="library-btn">📁 الدخول إلى مكتبة الخرائط والوثائق</a>
+<h2>قسم السنة السابعة أساسي</h2>
+<h3>دروس التاريخ:</h3>
+<a href="https://riadh2017-ctrl.github.io/Dhouhouraziraawkitaba/" class="btn" target="_blank">الدرس 1: ظهور الزراعة والكتابة</a>
+<a href="https://riadh2017-ctrl.github.io/Biladrafidin/" class="btn" target="_blank">الدرس 2: بلاد الرافدين ومصر الفرعونية</a>
+<a href="https://riadh2017-ctrl.github.io/athinafialasrclassiki/" class="btn" target="_blank">الدرس 3: أثينا في العصر الكلاسيكي</a>
+<a href="https://riadh2017-ctrl.github.io/cartagealbouniya/" class="btn" target="_blank">الدرس 4: قرطاج في العهد البوني</a>
+<a href="https://riadh2017-ctrl.github.io/Houroub-bouniya/" class="btn" target="_blank">الدرس 5: الصراع بين روما وقرطاج</a>
+<a href="https://riadh2017-ctrl.github.io/hadaratalbiladtounisia/" class="btn" target="_blank">الدرس 6: حضارة البلاد التونسية</a>
+<a href="https://riadh2017-ctrl.github.io/dhouhouralislam/" class="btn" target="_blank">الدرس 7: ظهور الإسلام وانتشاره</a>
+<a href="#" class="btn" target="_blank">الدرس 8: الحضارة العربية الإسلامية</a>
+<a href="#" class="btn" target="_blank">الدرس 9: بلاد المغرب والأندلس</a>
 
-    <h3 style="margin-top: 30px; color: #1a365d;">قسم السنة السابعة أساسي</h3>
-    <p style="color: #666;">دروس التاريخ:</p>
+<h3>دروس الجغرافيا:</h3>
+<a href="https://riadh2017-ctrl.github.io/alardkawkabazrak/" class="btn" target="_blank">الدرس 1: الأرض كوكب أزرق</a>
+<a href="https://riadh2017-ctrl.github.io/marakizalimarsoukani/" class="btn" target="_blank">الدرس 2: مراكز الإعمار الكبرى</a>
+<a href="https://riadh2017-ctrl.github.io/harakiyasoukaniya/" class="btn" target="_blank">الدرس 3: حركية سكانية متباينة</a>
+<a href="#" class="btn" target="_blank">الدرس 4: عالم متقدم وعالم نام</a>
+<a href="https://riadh2017-ctrl.github.io/tanawaanitakmanakhi/" class="btn" target="_blank">الدرس 5: تنوع النطاقات المناخية</a>
+<a href="https://riadh2017-ctrl.github.io/Achkaltatharis/" class="btn" target="_blank">الدرس 6: تنوع أشكال التضاريس</a>
+<a href="#" class="btn" target="_blank">الدرس 7: المشاهد الحضرية</a>
+<a href="#" class="btn" target="_blank">الدرس 8: المشاهد الريفية</a>
 
-    <!-- أزرار الدروس -->
-    <a href="lesson1.html" class="lesson-btn">الدرس 1: ظهور الزراعة والكتابة</a>
-    <a href="lesson2.html" class="lesson-btn">الدرس 2: بلاد الرافدين ومصر الفرعونية</a>
-    <a href="lesson3.html" class="lesson-btn">الدرس 3: أثينا في العصر الكلاسيكي</a>
-    <a href="lesson4.html" class="lesson-btn">الدرس 4: قرطاج في العهد البوني</a>
-    <a href="lesson5.html" class="lesson-btn">الدرس 5: الصراع بين روما وقرطاج</a>
+<h2>قسم السنة الأولى ثانوي</h2>
+<h3>دروس التاريخ:</h3>
+<a href="https://riadh2017-ctrl.github.io/cartagekososiathadaria/" class="btn" target="_blank">الخصوصيات الحضارية لقرطاج البونية</a>
+<a href="https://riadh2017-ctrl.github.io/Cartage-alminaa/" class="btn" target="_blank">قرطاج البونية: الميناء والتوسع التجاري</a>
+<a href="https://riadh2017-ctrl.github.io/Hannibal/" class="btn" target="_blank">عبقرية القائد العسكري حنبعل</a>
+<a href="https://riadh2017-ctrl.github.io/alizdiharalimrani/" class="btn" target="_blank">الازدهار العمراني لقرطاج الرومانية</a>
+<a href="https://riadh2017-ctrl.github.io/alizdiharalfilahi/" class="btn" target="_blank">الازدهار الاقتصادي والفلاحة</a>
+<a href="https://riadh2017-ctrl.github.io/kiddisaugustinos/" class="btn" target="_blank">حياة وأفكار القديس أوغسطينوس</a>
+<a href="https://riadh2017-ctrl.github.io/kayrawaninticharislam/" class="btn" target="_blank">دور القيروان كقاعدة للانتشار</a>
+<a href="https://riadh2017-ctrl.github.io/Kayrawanatijara/" class="btn" target="_blank">الدور الاقتصادي للقيروان</a>
+<a href="https://riadh2017-ctrl.github.io/jamaaokbaibnjazar/" class="btn" target="_blank">خصائص العمارة الإسلامية في القيروان</a>
+<a href="https://riadh2017-ctrl.github.io/Imaratmadinettounes/" class="btn" target="_blank">العهد الحفصي وعمارة مدينة تونس</a>
+<a href="https://riadh2017-ctrl.github.io/alharakaalislahia19/" class="btn" target="_blank">مسار الدولة التونسية: من الإصلاح للتحديث</a>
+<a href="#" class="btn" target="_blank">مقاومة الاستعمار الفرنسي</a>
 
-    <hr id="maps-section">
+<h3>دروس الجغرافيا:</h3>
+<a href="https://riadh2017-ctrl.github.io/oulathanawigeo/" class="btn" target="_blank">الوحدة 1: التوزيع الجغرافي للسكان</a>
+<a href="#" class="btn" target="_blank">الوحدة 2: الموارد المائية والنفطية</a>
+<a href="#" class="btn" target="_blank">الوحدة 3: الإنسان والوسط الطبيعي</a>
 
-    <!-- قسم الخرائط والوثائق -->
-    <h3>مكتبة الخرائط والوثائق التعليمية المحمية</h3>
-    
-    <div class="viewer-container">
-        <div class="file-title">الخريطة 1</div>
-        <iframe src="map1.pdf"></iframe>
-        <div class="permission-notice">⚠️ تنبيه هام: جميع الموارد تفاعلية وهي ملكية فكرية للأستاذ رياض سليمي. يمنع إعادة نشرها تجارياً. لطلب الإذن بالتحميل تواصل عبر البريد: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></div>
-    </div>
+<div class="copyright-box">
+<b>تنبيه هام وحماية قانونية:</b><br>
+جميع الموارد التفاعلية في هذا الموقع هي ملكية فكرية للأستاذ <b>رياض سليمي</b>. يمنع إعادة نشرها أو استغلالها تجارياً. للتواصل: <b>Sĺimir334@gmail.com</b>
+</div>
 
-    <!-- (بقية الخرائط والوثائق من 2 إلى 10 ومن doc2 إلى doc30 يمكنك وضعها هنا كما كانت لديك) -->
-
-    <!-- تذييل الصفحة -->
-    <div class="site-footer">
-        <p>جميع الحقوق محفوظة © 2026 الأستاذ رياض سليمي</p>
-        <p>للتواصل وطلب الإذن: <a href="mailto:Slimir334@gmail.com">Slimir334@gmail.com</a></p>
-    </div>
-
+<div class="footer">
+جميع الحقوق محفوظة © 2026 الأستاذ رياض سليمي
+</div>
+</div>
 </body>
 </html>
+
 
 
 
